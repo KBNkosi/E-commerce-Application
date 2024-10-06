@@ -5,5 +5,6 @@ import searchIcon from './search-icon.png';
 import starIcon from './star-icon.png';
 import profileIcon from './profile-icon.png';
 import cartIcon from './cart-icon.png';
+import menuIcon from './menu-icon.svg';
 
-export { instagramIcon, twitterIcon, youtubeIcon, searchIcon, starIcon, profileIcon, cartIcon }
+export { instagramIcon, twitterIcon, youtubeIcon, searchIcon, starIcon, profileIcon, cartIcon, menuIcon }
