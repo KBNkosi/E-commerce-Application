@@ -13,7 +13,7 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <header>
+      <header className="bg-[#F5F7FA]">
         <Nav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
         <Hero isMenuOpen={isMenuOpen} />

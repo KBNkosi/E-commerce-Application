@@ -23,7 +23,7 @@ export const Nav = ({isMenuOpen, setIsMenuOpen}) => {
   
 
   return (
-    <nav className=" flex justify-around items-center">
+    <nav className=" flex justify-around items-center p-4">
       {/* logo  */}
       <div className="flex">
         <img src={logo} alt="logo" />
