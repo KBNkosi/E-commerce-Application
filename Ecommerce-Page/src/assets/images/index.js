@@ -1,4 +1,5 @@
-import HeroImg from './hero-img.png';
+import heroImg from './hero-img.png';
 import logo from './logo.png';
+import OmMartImg from './OmMart.png';
 
-export { HeroImg, logo }
+export { heroImg, logo, OmMartImg }

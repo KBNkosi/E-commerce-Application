@@ -1,30 +1,40 @@
-import { Hero, ProductView, BestSeller, Subscribe, CustomerReview, Footer } from './sections'
-import { Nav } from './components/Nav'
+import {
+  Hero,
+  ProductView,
+  BestSeller,
+  Subscribe,
+  CustomerReview,
+  Footer,
+} from "./sections";
+import { Nav } from "./components/Nav";
+import { useState } from "react";
 
 const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
-      <Nav/>
+      <header>
+        <Nav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+
+        <Hero isMenuOpen={isMenuOpen} />
+      </header>
       <section>
-        <Hero/>
+        <ProductView />
       </section>
       <section>
-        <ProductView/>
+        <BestSeller />
       </section>
       <section>
-        <BestSeller/>
+        <Subscribe />
       </section>
       <section>
-        <Subscribe/>
+        <CustomerReview />
       </section>
       <section>
-        <CustomerReview/>
-      </section>
-      <section>
-        <Footer/>
+        <Footer />
       </section>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

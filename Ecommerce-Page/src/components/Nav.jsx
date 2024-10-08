@@ -9,21 +9,25 @@ import {
   menuIcon,
 } from "../assets/icons";
 import { logo } from "../assets/images";
-import { useState } from "react";
 
-export const Nav = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
+export const Nav = ({isMenuOpen, setIsMenuOpen}) => {
+  
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prevState)=>!prevState);
+     
   };
 
+  
+
   return (
-    <nav className="flex justify-around items-center">
+    <nav className=" flex justify-around items-center">
       {/* logo  */}
       <div className="flex">
         <img src={logo} alt="logo" />
-        <p className="my-auto font-extrabold text-lg">OmMart</p>
+        <p className=" my-auto font-extrabold text-lg">OmMart</p>
       </div>
 
       {/* menu  */}
@@ -70,8 +74,8 @@ export const Nav = () => {
 
         {/* mobile menu  */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute p-4 w-full right-4 shadow-md ">
-            <ul className="flex-col py-2 text-sm">
+          <div className="lg:hidden absolute p-4 top-10 right-0  shadow-md z-50 ">
+            <ul className="flex-col py-4 text-sm">
               <li className="py-1">HOME</li>
               <li className="py-1">ABOUT US</li>
               <li className="py-1">SHOP</li>
@@ -81,6 +85,7 @@ export const Nav = () => {
           </div>
         )}
       </div>
+      
     </nav>
   );
 };
