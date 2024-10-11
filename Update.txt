@@ -1,0 +1,4 @@
+
+Problems Encountered and Solved
+1.Fixed broken image urls from api response by providing fallback images on failed to load imgaes to enusre
+seamless user experience
