@@ -2,3 +2,10 @@
 Problems Encountered and Solved
 1.Fixed broken image urls from api response by providing fallback images on failed to load imgaes to enusre
 seamless user experience
+2. Fixed overflowing content in product view 
+
+
+Still need to do?
+1. Check how to make responsive images
+2. Fix menu bar so that it displays on top of image instead of pushing it away
+3. Fix category products that are not found

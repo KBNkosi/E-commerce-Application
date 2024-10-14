@@ -1,7 +1,6 @@
 import {
   Hero,
   ProductView,
-  BestSeller,
   Subscribe,
   CustomerReview,
   Footer,
@@ -20,9 +19,6 @@ const App = () => {
       </header>
       <section>
         <ProductView />
-      </section>
-      <section>
-        <BestSeller />
       </section>
       <section>
         <Subscribe />
