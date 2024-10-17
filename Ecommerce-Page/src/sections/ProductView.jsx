@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../components/Card";
 import { useEffect, useState } from "react";
+import ProductCard from "../components/ProductCard";
 
 const ProductView = () => {
   const [products, setProducts] = useState([]);
@@ -67,7 +67,7 @@ const ProductView = () => {
           ))}
         </div>
         <div>
-          <Card products={filteredProducts} />
+          <ProductCard products={filteredProducts} />
         </div>
       </div>
     </>

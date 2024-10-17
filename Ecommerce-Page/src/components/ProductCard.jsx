@@ -1,7 +1,7 @@
 import React from 'react'
 import {fallBackImages} from '../assets/images'
 
-const Card = ({products}) => {
+const ProductCard = ({products}) => {
     
 
 
@@ -20,7 +20,7 @@ const Card = ({products}) => {
     <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
         {products.map((product, index) => (
             <div key={product.id} className=" p-4 rounded-lg max-w-xs mx-auto">
-              <div className="w-full h-56 flex justify-center items-center overflow-hidden">
+              <div className="w-full h-auto flex justify-center items-center overflow-hidden">
                 <img
                   src={product.images && product.images.length > 0 ? product.images[0] : fallBackImages[index % fallBackImages.length]}
                   alt="Stock image"
@@ -45,4 +45,4 @@ const Card = ({products}) => {
   )
 }
 
-export default Card
+export default ProductCard
