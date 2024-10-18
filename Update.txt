@@ -10,32 +10,4 @@ Still need to do?
 2. Fix menu bar so that it displays on top of image instead of pushing it away
 3. Fix category products that are not found
 
-import React, { useState } from 'react';
 
-const SubscribeForm = () => {
-  const [email, setEmail] = useState('');
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubscribe = () => {
-    // Implement subscription logic, e.g., send email to backend
-    console.log(`Subscribing email: ${email}`);
-    // Reset email state or show confirmation message
-  };
-
-  return (
-    <div>
-      <input
-        type="email"
-        placeholder="Enter your email"
-        value={email}
-        onChange={handleEmailChange}
-      />
-      <button onClick={handleSubscribe}>Subscribe</button>
-    </div>
-  );
-};
-
-export default SubscribeForm;
