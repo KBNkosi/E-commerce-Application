@@ -1,14 +1,32 @@
 import React from "react";
+import { useState } from "react";
 import { maleShopper } from "../assets/images";
 import SubscriptionForm from "../components/SubscriptionForm";
 import Button from "../components/Button";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Subscribe = () => {
+
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscription=()=>{
+    if(!isSubscribed){
+    setIsSubscribed(true);
+    toast.success("Thank you for subscribing");
+  }
+}
+
+  
+  
+
+  
   return (
     <>
       <div
         className="flex flex-col md:flex-row items-center space-y-16 md:space-y-0 md:space-x-16 border-2 
-     max-w-full rounded-lg  mx-auto mt- p-4  "
+     max-w-full rounded-lg  mx-auto mt- p-8  "
       >
         <div className="w-full xs:w-[80%] h-auto md:w-1/2 xl:w-2/5">
           <img
@@ -25,7 +43,8 @@ const Subscribe = () => {
 
           <div className="flex flex-col sm:flex-row gap-3">
             <SubscriptionForm className="w-full sm:w-3/4"/>
-            <Button className="w-full sm:w-1/4" />
+            <Button handleSubscription={handleSubscription} />
+            <ToastContainer theme="dark"/>
           </div>
           <p className="mt-3 font-light">Subscribe to our newsletter and get your discount code</p>
         </div>

@@ -17,6 +17,11 @@ import fallBackImg12 from "./distressed-kids-jeans.jpg";
 import fallBackImg13 from "./girls-dress-back.jpg";
 import fallBackImg14 from "./girls-striped-dress.jpg";
 import fallBackImg15 from "./hanging-pocket-watch.jpg";
+import client1 from "./client1.jpg";
+import client2 from "./client2.jpg";
+import client3 from "./client3.jpg";
+import client4 from "./client4.jpg";
+import client5 from "./client5.jpg";
 
 export { heroImg, logo, OmMartImg, maleShopper };
 
@@ -37,3 +42,41 @@ export const fallBackImages = [
   fallBackImg14,
   fallBackImg15,
 ];
+
+export const clients=[
+  {
+    id:1,
+    name:"Client 1",
+    img:client1,
+    date:"2022-01-01",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id:2,
+    name:"Client 2",
+    img:client2,
+    date:"2022-02-02",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id:3,
+    name:"Client 3",
+    img:client3,
+    date:"2022-03-03",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id:4,
+    name:"Client 4",
+    img:client4,
+    date:"2022-04-04",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id:5,
+    name:"Client 5",
+    img:client5,
+    date:"2022-05-05",
+    review:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  }
+]

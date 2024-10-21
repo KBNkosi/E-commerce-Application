@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import {Button} from "flowbite-react"
 import ProductCard from "../components/ProductCard";
+
 
 const ProductView = () => {
   const [products, setProducts] = useState([]);
@@ -19,12 +21,12 @@ const ProductView = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(products);
+ 
 
   /**
    * Handles category change in product view by filtering the products based on the selected category.
    * If the selected category is "All", it shows all products, otherwise it filters them based on the selected category.
-   * @param {string} item - The name of the selected category.
+   * @param {string} category - The name of the selected category.
    */
   const handleCategoryChange = (category) => {
     if(category === "All"){
@@ -57,13 +59,13 @@ const ProductView = () => {
             "Electronics",
             "Miscellanous",
           ].map((category, index) => (
-            <button
+            <Button
               key={index}
               onClick={()=>handleCategoryChange(category)}
-              className="bg-orange-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-orange-700"
+               outline gradientDuoTone="pinkToOrange"
             >
               {category}
-            </button>
+            </Button>
           ))}
         </div>
         <div>

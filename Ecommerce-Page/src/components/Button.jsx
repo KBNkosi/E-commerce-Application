@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = () => {
+const Button = ({handleSubscription}) => {
   return (
     <>
-      <button className="bg-orange-600 text-white text-sm px-4 py-2 rounded-lg">Shop Now</button>
+       <button  onClick={handleSubscription} className="inline-flex text-white bg-orange-600 border-0 py-2 px-6 focus:outline-none hover:bg-orange-700 rounded text-lg">Button</button>
     </>
   )
 }
