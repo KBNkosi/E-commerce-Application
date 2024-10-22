@@ -5,7 +5,7 @@ const ClientCard = () => {
     console.log(clients);
   return (
     <>
-    <div className="container px-5 py-24 mx-auto">
+    <div>
         <div className="flex flex-wrap -m-4">
             {clients.map((client, index)=>(
                 <div key={index} className="p-4 border-gray-200 rounded-lg lg:w-1/4 md:w-1/2">

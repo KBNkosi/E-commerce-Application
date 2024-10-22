@@ -4,9 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+
+  body {
     font-family: 'Inter', sans-serif;
 }
+
+
+
 
 /* Hide scrollbar */
 .scrollbar-hide {
@@ -17,5 +21,7 @@ body {
   .scrollbar-hide::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
   }
+
+  
   
 
