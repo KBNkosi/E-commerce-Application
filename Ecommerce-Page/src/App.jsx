@@ -3,7 +3,7 @@ import {
   ProductView,
   Subscribe,
   CustomerReview,
-  Footer,
+  FooterComponent,
 } from "./sections";
 import { Nav } from "./components/Nav";
 import { useState } from "react";
@@ -27,7 +27,7 @@ const App = () => {
         <CustomerReview />
       </section>
       <section>
-        <Footer />
+        <FooterComponent />
       </section>
     </>
   );

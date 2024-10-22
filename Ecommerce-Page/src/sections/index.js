@@ -3,6 +3,6 @@ import  BestSeller  from "./BestSeller";
 import  ProductView  from "./ProductView";
 import  Subscribe  from "./Subscribe";
 import  CustomerReview  from "./CustomerReview";
-import  Footer  from "./Footer";
+import  FooterComponent  from "./FooterComponent";
 
-export { Hero, ProductView, BestSeller,Subscribe, CustomerReview, Footer }
+export { Hero, ProductView, BestSeller,Subscribe, CustomerReview, FooterComponent }

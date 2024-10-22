@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../components/Button";
-import phoneIcon from "../assets/icons/bx-phone-call.png";
+import phoneIcon from "../assets/icons/bxPhoneCall.png";
 import { heroImg, OmMartImg } from "../assets/images";
 
 const Hero = ({isMenuOpen}) => {
