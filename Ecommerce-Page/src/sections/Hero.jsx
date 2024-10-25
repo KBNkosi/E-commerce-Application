@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "../components/Button";
-import { heroImg, OmMartImg, pradaLogo, zaraLogo, calvinLogo, gucciLogo } from "../assets/images";
+import { heroImg, pradaLogo, zaraLogo, calvinLogo,kleinLogo } from "../assets/images";
 
-const Hero = ({isMenuOpen}) => {
+const Hero = () => {
   
   return (
     <>
@@ -19,12 +19,12 @@ const Hero = ({isMenuOpen}) => {
       Shop Now
     </button>
   </div>
-  <div className=" w-full bg-indigo-500 text-white py-3 px-6 absolute bottom-0 left-0 ">
+  <div className=" w-full bg-indigo-500 text-white px-24 py-6 absolute bottom-0 left-0 ">
     <div className="flex flex-wrap justify-between items-center text-2xl font-bold">
       <img src={zaraLogo} alt="zara logo" />
       <img src={pradaLogo} alt="prada logo" />
-      <img src={gucciLogo} alt="gucci logo" />
       <img src={calvinLogo} alt="calvin logo" />
+      <img src={kleinLogo} alt="klein logo" />
     </div>
   </div>
 </div>

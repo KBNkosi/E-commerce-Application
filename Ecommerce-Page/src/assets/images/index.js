@@ -4,6 +4,8 @@ import gucciLogo from "./gucciLogo.svg";
 import calvinLogo from "./calvinLogo.svg";
 import pradaLogo from "./pradaLogo.svg";
 import zaraLogo from "./zaraLogo.svg";
+import kleinLogo from "./kleinLogo.svg";
+import starsImg from "./stars.svg";
 import OmMartImg from "./OmMart.png";
 import maleShopper from "./male-shopper.png";
 import fallBackImg from "./blue-and-green-background-with-silver-jewelry.jpg";
@@ -27,7 +29,7 @@ import client3 from "./client3.jpg";
 import client4 from "./client4.jpg";
 import client5 from "./client5.jpg";
 
-export { heroImg, logo, OmMartImg, maleShopper, gucciLogo, calvinLogo, pradaLogo, zaraLogo };
+export { heroImg, logo, OmMartImg, maleShopper, gucciLogo, calvinLogo, pradaLogo, zaraLogo, kleinLogo, starsImg };
 
 export const fallBackImages = [
   fallBackImg,
