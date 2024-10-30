@@ -8,12 +8,9 @@ const ProductView = () => {
   const [products, setProducts] = useState([]);
   const [visibleProducts, setVisibleProducts] = useState(8);
   const [topSellingProducts, setTopSellingProducts] = useState(8);
-  const [allVisible, setAllVisible] = useState(false);
+
   
 
-  /* The `useEffect` hook in the provided code snippet is making an API call to fetch product data
-    from the URL "https://api.escuelajs.co/api/v1/products" when the component mounts for the first
-    time. */
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
