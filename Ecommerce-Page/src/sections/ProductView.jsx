@@ -72,9 +72,10 @@ const ProductView = () => {
 
             </div>
           ))}
+          </div>
 
           {visibleProducts < products.length && (
-            <div className="w-full border-2 border-green-400 flex justify-center mt-4 ">
+            <div className="w-full flex justify-center mt-12 ">
             <button
               onClick={handleViewMore}
               className="w-40 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-full"
@@ -85,7 +86,9 @@ const ProductView = () => {
            
           )}
 
-        </div>
+          <hr className="my-16  shadow-sm" />
+
+        
         {/* Top selling section */}
         <h2 className="text-4xl text-center font-extrabold mt-8 mb-4">TOP SELLING</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -122,7 +125,7 @@ const ProductView = () => {
             ))}
           </div>
           {topSellingProducts < products.length -7 && (
-            <div className="flex justify-center mt-8 border-2 border-green-400">
+            <div className="flex justify-center mt-12 ">
               <button
               onClick={handleViewMoreTopSelling}
               className=" w-40 py-2   bg-indigo-500 hover:bg-indigo-600 text-white  rounded-full"
