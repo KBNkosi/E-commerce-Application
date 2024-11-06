@@ -1,8 +1,7 @@
 import  Hero  from "./Hero";
 import  BestSeller  from "./BestSeller";
 import  ProductView  from "./ProductView";
-import  Subscribe  from "./Subscribe";
-import  CustomerReview  from "./CustomerReview";
+import  Category  from "./Category";
 import  FooterComponent  from "./FooterComponent";
 
-export { Hero, ProductView, BestSeller,Subscribe, CustomerReview, FooterComponent }
+export { Hero, ProductView, BestSeller, Category, FooterComponent }
