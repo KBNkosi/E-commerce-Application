@@ -1,26 +1,26 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import {starsImg} from "../assets/images"
-
+import {starsImg} from "../assets/images";
+import axios from "axios";
 
 
 const ProductView = () => {
+  
   const [products, setProducts] = useState([]);
   const [visibleProducts, setVisibleProducts] = useState(8);
   const [topSellingProducts, setTopSellingProducts] = useState(8);
 
   
+ useEffect(()=>{
+    axios.get("https://dummyjson.com/products")
+   .then(response => {
+      setProducts(response.data.products);
+    })
+   .catch(error => {
+      console.error("Error fetching products:", error);
+    });
+  }, []); // Run the effect only once on mount
 
-  useEffect(() => {
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data.products);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  console.log(products);
 
   const handleViewMore = () => {
     setVisibleProducts((prev)=>Math.min(prev + 4, products.length));
@@ -29,18 +29,14 @@ const ProductView = () => {
   const handleViewMoreTopSelling = () => {
     setTopSellingProducts((prev)=>Math.min(prev + 4, products.length));
   }
-
  
-
- 
-
   return (
     <>
       <div className="container mx-auto p-4">
         {/* New arrivals section */}
         <h1 className="text-4xl text-center font-extrabold my-10">NEW ARRIVALS</h1>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {products.slice(0, visibleProducts).map((product) => (
+          {products && products.length > 0 && products.slice(0, visibleProducts).map((product) => (
             <div key={product.id} className="border p-4 rounded-lg ">
               <img 
               src={product.images[0]} 
@@ -92,7 +88,7 @@ const ProductView = () => {
         {/* Top selling section */}
         <h2 className="text-4xl text-center font-extrabold mt-8 mb-4">TOP SELLING</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {products.slice(7, 7 + topSellingProducts).map((product) => (
+            {products && products.length > 0 && products.slice(7, 7 + topSellingProducts).map((product) => (
               <div key={product.id} className="border p-4 rounded-lg">
               <img 
               src={product.images[0]} 

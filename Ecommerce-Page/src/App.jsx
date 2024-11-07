@@ -4,13 +4,18 @@ import {
   Category,
   FooterComponent,
 } from "./sections";
+import { useState, useEffect } from "react";
 
 
 const App = () => {
-  
+ 
+ 
+
   return (
     <>
-     
+     <header>
+       <Hero />
+     </header>
       <section>
         <ProductView />
       </section>
