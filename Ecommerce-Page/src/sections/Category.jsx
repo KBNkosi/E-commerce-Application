@@ -15,7 +15,11 @@ const Category = () => {
       });
   }, []); // Run the effect only once on mount
 
-  console.log(products)
+
+  const uniqueCategories = [...new Map(products.map((item) => [item.category, item])).values()].slice(0, 4);
+
+  console.log(uniqueCategories)
+
   return (
     <>
       <div className="container mx-auto px-4 py-8">
@@ -23,9 +27,9 @@ const Category = () => {
           Browse by Category
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {products.map((category) => (
+          {uniqueCategories.map((category,index) => (
             <div
-              key={category.id}
+              key={index}
               className="relative bg-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
             >
               <img src={category.thumbnail} 
