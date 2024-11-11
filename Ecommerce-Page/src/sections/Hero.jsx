@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../components/Button";
 import { heroImg, pradaLogo, zaraLogo, calvinLogo,kleinLogo } from "../assets/images";
 
 const Hero = () => {
