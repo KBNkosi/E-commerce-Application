@@ -1,24 +1,32 @@
-import { 
+import {
   instagramIcon,
-   twitterIcon,
-    youtubeIcon,
-    visa,
-    masterCard,
-    googlePay,
-    applePay,
-    paypal
-   } from "../assets/icons";
+  twitterIcon,
+  youtubeIcon,
+  visa,
+  masterCard,
+  googlePay,
+  applePay,
+  paypal,
+} from "../assets/icons";
 import { useState } from "react";
+import {ToastContainer, toast} from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 const FooterComponent = () => {
   const [email, setEmail] = useState("");
 
   const handleSubscribe = () => {
-    // Subscription logic can be added here
-    console.log(`Subscribed with ${email}`);
+   if(email){
+    toast.success('You have successfully subscribed to our newsletter!');
+    setEmail("");
+   }else{
+    toast.error('Please enter email address');
+   }
   };
 
   return (
     <footer>
+      {/*Toast container */}
+      <ToastContainer theme="dark" position="top-right" autoClose={3000} hideProgressBar />
       {/* Subscribe Section*/}
       <section className="bg-[#1F1F1F] text-white py-10 px-4 md:px-10 flex flex-col md:flex-row justify-between items-center">
         <div className="text-lg md:text-2xl font-semibold ">
@@ -54,16 +62,16 @@ const FooterComponent = () => {
             <h2 className="text-xl font-bold mb-2">SHOPRO.CO</h2>
             <p className="text-gray-600 mb-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
-              adipisci! 
+              adipisci!
             </p>
             <div className="flex xspace-x-4">
               <img src={instagramIcon} alt="Instagram icon" />
               <img src={twitterIcon} alt="twiiter icon" />
               <img src={youtubeIcon} alt="youtube icon" />
             </div>
-            </div>
+          </div>
 
-            {/* Company Section */}
+          {/* Company Section */}
           <div>
             <h3 className="font-semibold text-lg mb-2">Company</h3>
             <ul className="flex flex-col space-y-4">
@@ -71,7 +79,6 @@ const FooterComponent = () => {
               <li>Works</li>
               <li>Career</li>
               <li>Features</li>
-
             </ul>
           </div>
 
@@ -100,15 +107,13 @@ const FooterComponent = () => {
           {/* Resources Section */}
           <div>
             <h3 className="font-semibold text-lg mb-2">Resources</h3>
-            <ul className="flex flex-col space-y-4"> 
+            <ul className="flex flex-col space-y-4">
               <li>Free eBooks</li>
               <li>How to Blog</li>
               <li>Youtube Playlist</li>
               <li>Development Tutorial</li>
-
             </ul>
           </div>
-          
         </div>
       </section>
       <hr />
