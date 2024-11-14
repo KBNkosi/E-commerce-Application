@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import {starsImg} from "../assets/images";
+import {starsImg} from "../../assets/images";
 import axios from "axios";
 
 
-const ProductView = () => {
+const ProductList = () => {
   
   const [products, setProducts] = useState([]);
   const [visibleProducts, setVisibleProducts] = useState(8);
@@ -137,4 +137,4 @@ const ProductView = () => {
   );
 };
 
-export default ProductView;
+export default ProductList;

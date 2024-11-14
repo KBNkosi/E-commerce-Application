@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Category = () => {
+const CategoryList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -52,4 +52,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default CategoryList;

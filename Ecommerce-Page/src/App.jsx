@@ -1,10 +1,4 @@
-import {
-  Hero,
-  ProductView,
-  Category,
-  FooterComponent,
-} from "./sections";
-import { useState, useEffect } from "react";
+import AppRoutes from "./routes/AppRoutes";
 
 
 const App = () => {
@@ -13,18 +7,9 @@ const App = () => {
 
   return (
     <>
-     <header>
-       <Hero />
-     </header>
-      <section>
-        <ProductView />
-      </section>
-      <section>
-        <Category />
-      </section>
-      <section>
-        <FooterComponent />
-      </section>
+      
+      <AppRoutes />;
+      
     </>
   );
 };

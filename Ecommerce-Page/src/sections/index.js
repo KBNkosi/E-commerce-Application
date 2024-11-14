@@ -1,6 +1,6 @@
-import  Hero  from "./Hero";
-import  ProductView  from "./ProductView";
-import  Category  from "./Category";
-import  FooterComponent  from "./FooterComponent";
+import  Hero  from "./Home/Hero";
+import  ProductList  from "./Home/ProductList";
+import  CategoryList  from "./Home/CategoryList";
+import  Footer  from "../components/Footer";
 
-export { Hero, ProductView, Category, FooterComponent }
+export { Hero, ProductList, CategoryList, Footer }

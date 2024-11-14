@@ -1,5 +1,5 @@
 import React from "react";
-import { heroImg, pradaLogo, zaraLogo, calvinLogo,kleinLogo } from "../assets/images";
+import { heroImg, pradaLogo, zaraLogo, calvinLogo,kleinLogo } from "../../assets/images";
 
 const Hero = () => {
   

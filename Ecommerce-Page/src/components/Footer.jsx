@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import {ToastContainer, toast} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-const FooterComponent = () => {
+const Footer = () => {
   const [email, setEmail] = useState("");
 
   const handleSubscribe = () => {
@@ -131,4 +131,4 @@ const FooterComponent = () => {
   );
 };
 
-export default FooterComponent;
+export default Footer;
