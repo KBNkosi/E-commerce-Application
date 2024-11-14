@@ -3,7 +3,7 @@ import { useState } from "react";
 const FooterComponent = () => {
   const [email, setEmail]=useState("");
   
-  handleSubscribe=(e)=>{
+  handleSubscribe=()=>{
     console.log("thanks for sunsbring");
   }
   return (
