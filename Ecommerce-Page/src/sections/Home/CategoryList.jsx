@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CategoryList = () => {
   const [products, setProducts] = useState([]);
@@ -18,8 +19,6 @@ const CategoryList = () => {
 
   const uniqueCategories = [...new Map(products.map((item) => [item.category, item])).values()].slice(0, 4);
 
-  console.log(uniqueCategories)
-
   return (
     <>
       <div className="container mx-auto px-4 py-8">
@@ -28,7 +27,9 @@ const CategoryList = () => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {uniqueCategories.map((category,index) => (
-            <div
+
+            <Link
+              to={`/products?category=${category.category}`}
               key={index}
               className="relative bg-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
             >
@@ -44,7 +45,7 @@ const CategoryList = () => {
                 </h3>
 
                </div>
-            </div>
+            </Link>
           ))};
         </div>
       </div>
