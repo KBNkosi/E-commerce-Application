@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import {starsImg} from "../../assets/images";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 const ProductList = () => {
@@ -37,7 +38,10 @@ const ProductList = () => {
         <h1 className="text-4xl text-center font-extrabold my-10">NEW ARRIVALS</h1>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {products && products.length > 0 && products.slice(0, visibleProducts).map((product) => (
-            <div key={product.id} className="border p-4 rounded-lg ">
+            <Link 
+            to={`/products/${product.id}`}
+            key={product.id}
+            className="border p-4 rounded-lg hover:shadow-lg transition-all duration-300">
               <img 
               src={product.images[0]} 
               alt={product.name}
@@ -66,7 +70,7 @@ const ProductList = () => {
                 <p className="text-lg font-bold">${product.price.toFixed(2)}</p>
               )}
 
-            </div>
+            </Link>
           ))}
           </div>
 
