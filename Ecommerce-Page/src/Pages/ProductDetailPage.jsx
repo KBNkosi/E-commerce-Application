@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import axios from 'axios';
 
 const ProductDetailPage = () => {
@@ -65,6 +66,23 @@ const ProductDetailPage = () => {
     if(!product) return 0;
     const discount=product.price*(product.discountPercentage/100);
     return (product.price-discount).toFixed(2);
+  };
+
+  const {dispatch}=useCart();
+
+  const handleAddToCart=()=>{
+    dispatch({
+      type:"ADD_TO_CART",
+      payload:{
+        id:product.id,
+        title:product.title,
+        price:product.price,
+        images:product.images,
+        brand:product.brand,
+        discountPercentage:product.discountPercentage,
+        quantity:quantity
+      }
+    });
   };
 
   /* A conditional check that ensures if the `product` state is falsy (null, undefined, etc.), the component will return
@@ -198,7 +216,9 @@ const ProductDetailPage = () => {
          </div>
 
          {/*Add to cart Button */}
-         <button className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+         <button 
+          onClick={handleAddToCart}
+         className="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors">
            Add to Cart
          </button>
       </div>
