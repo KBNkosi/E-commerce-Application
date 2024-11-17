@@ -23,10 +23,18 @@ const ProductList = () => {
   }, []); // Run the effect only once on mount
 
 
+/**
+ * Increases the number of products displayed by 4, up to the total number
+ * of available products.
+ */
   const handleViewMore = () => {
     setVisibleProducts((prev)=>Math.min(prev + 4, products.length));
   };
 
+/**
+ * Increases the number of top-selling products displayed by 4,
+ * up to the total number of available products.
+ */
   const handleViewMoreTopSelling = () => {
     setTopSellingProducts((prev)=>Math.min(prev + 4, products.length));
   }
@@ -93,7 +101,10 @@ const ProductList = () => {
         <h2 className="text-4xl text-center font-extrabold mt-8 mb-4">TOP SELLING</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {products && products.length > 0 && products.slice(7, 7 + topSellingProducts).map((product) => (
-              <div key={product.id} className="border p-4 rounded-lg">
+              <Link 
+               to={`/products/${product.id}`}
+               key={product.id}
+               className="border p-4 rounded-lg hover:shadow-lg transition-all duration-300">
               <img 
               src={product.images[0]} 
               alt={product.name}
@@ -121,7 +132,7 @@ const ProductList = () => {
                 <p className="text-lg font-bold">${product.price.toFixed(2)}</p>
               )}
 
-            </div>
+            </Link>
             ))}
           </div>
           {topSellingProducts < products.length -7 && (

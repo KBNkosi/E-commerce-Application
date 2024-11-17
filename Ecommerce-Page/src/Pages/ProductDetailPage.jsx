@@ -11,6 +11,8 @@ const ProductDetailPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
+ /* The `useEffect` hook in the code snippet you provided is responsible for fetching product data from
+ an API endpoint when the `id` parameter changes. Here's a breakdown of what it does: */
   useEffect(()=>{
     setLoading(true);
     axios
@@ -27,6 +29,7 @@ const ProductDetailPage = () => {
   }, [id]);
 
 
+  /* A conditional check to display a loading spinner while the product data is being fetched from the API. */
   if(loading){
     return(
       <div className="flex justify-center items-center min-h-screen">
@@ -35,6 +38,8 @@ const ProductDetailPage = () => {
     );
   }
 
+  /* A conditional check that handles the
+  scenario where an error occurs during the fetching of product data from the API. */
   if(error){
     return(
       <div className="container mx-auto p-4 text-red-500 text-center">
@@ -42,17 +47,28 @@ const ProductDetailPage = () => {
       </div>
     );
   }
+/**
+ * The function `handleQuantityChange` updates the quantity state by incrementing or decrementing it,
+ * ensuring it never goes below 1.
+ */
 
   const handleQauntityChange=(change)=>{
     setQuantity((prevQuantity) => Math.max(1, prevQuantity + change));
   };
 
+  /**
+   * The function calculates the final price of a product after applying a discount percentage.
+   * @returns The function `calculateFinalPrice` is returning the final price of a product after
+   * applying a discount.
+   */
   const calculateFinalPrice=()=>{
     if(!product) return 0;
     const discount=product.price*(product.discountPercentage/100);
     return (product.price-discount).toFixed(2);
   };
 
+  /* A conditional check that ensures if the `product` state is falsy (null, undefined, etc.), the component will return
+  `null`. */
   if(!product) return null;
 
 

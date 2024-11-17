@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react';
-import { useSearchParams} from 'react-router-dom';
+import { Link, useSearchParams} from 'react-router-dom';
 import axios from 'axios';
 
 /**
@@ -67,7 +67,9 @@ const CategoryPage = () => {
 
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
       {products.map((product)=>(
-        <div key={product.id} className="border p-4 rounded-lg hover:shadow-lg transition-shadow">
+        <Link 
+           to={`/products/${product.id}`} 
+           key={product.id} className="border p-4 rounded-lg hover:shadow-lg transition-shadow">
            <img 
            src={product.images[0]} 
            alt={product.title}
@@ -99,7 +101,7 @@ const CategoryPage = () => {
                 ${product.price.toFixed(2)}
               </p>
             )}
-        </div>
+        </Link>
       ))}
     </div>
    </div>
