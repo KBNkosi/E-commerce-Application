@@ -18,27 +18,36 @@ const CategoryPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Set loading state while fetching data
     setLoading(true);
+
+    // Base URL for all products
     let url = 'https://dummyjson.com/products';
     
+    // Modify URL based on category or search parameters
     if (category) {
+      // Get products for specific category
       url = `https://dummyjson.com/products/category/${category}`;
     } else if (searchQuery) {
+      // Get products matching search query
       url = `https://dummyjson.com/products/search?q=${searchQuery}`;
     }
 
+    // Fetch products from API
     axios
       .get(url)
       .then((response) => {
+        // Update products state with fetched data
         setProducts(response.data.products);
         setLoading(false);
       })
       .catch((error) => {
+        // Handle any errors that occur during fetch
         console.error("Error fetching products:", error);
         setError("Failed to load products");
         setLoading(false);
       });
-  }, [category, searchQuery]);
+  }, [category, searchQuery]); // Re-run effect when category or search query changes
 
   if(loading) {
     return (
