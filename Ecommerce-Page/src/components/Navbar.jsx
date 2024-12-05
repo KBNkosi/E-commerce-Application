@@ -1,10 +1,12 @@
 import { useState} from "react";
 import { Link } from "react-router-dom";
 import {FaShoppingCart, FaUser, FaSearch,FaBars,FaTimes} from "react-icons/fa"
+import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
+    const { itemCount } = useCart();
 
     const toggleMenu = () => {
       setIsOpen(!isOpen);
@@ -51,7 +53,14 @@ const Navbar = () => {
 
               {/*Icons*/}
               <div className="flex items-center space-x-4">
-                <FaShoppingCart className="hover:text-indigo-400 cursor-pointer"/>
+                <Link to="/cart" className="relative">
+                  <FaShoppingCart className="hover:text-indigo-400 cursor-pointer" size={24}/>
+                  {itemCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-indigo-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                      {itemCount}
+                    </span>
+                  )}
+                </Link>
                 <FaUser className="hover:text-indigo-400 cursor-pointer"/>
               </div>
 

@@ -1,6 +1,6 @@
 import { useCart } from "../context/CartContext";
 import { Link} from "react-router-dom";
-import {Trash2} from "lucide-react";
+import { FaTrash } from "react-icons/fa";
 
 
 /**
@@ -129,7 +129,7 @@ const CartPage = () => {
                <button
                  onClick={()=>handleRemoveItem(item.id)}
                >
-                 <Trash2 size={20} />
+                 <FaTrash size={20} />
                </button>
              </div>
             </div>
