@@ -1,2 +1,2 @@
-# E-commerce-Product-Page
-building a full-stack e-commerce website 
+# E-commerce-Application
+building an e-commerce website 
